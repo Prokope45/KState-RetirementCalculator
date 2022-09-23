@@ -1,7 +1,7 @@
 
 
 class RetirementCalculator:
-    def __init__(self, monthly_withdraws, dollars, monthly_interest, annual_interest_rate):
+    def __init__(self, monthly_withdraws=0.0, dollars=0.0, monthly_interest=0.0, annual_interest_rate=0.0):
         """ Initialized class members """
         self.monthly_withdraws = monthly_withdraws
         self.dollars = dollars
@@ -9,7 +9,7 @@ class RetirementCalculator:
         self.annual_interest_rate = annual_interest_rate
 
         """ Lambda constants for evaluating lump sum, account balance and monthly interest rates """
-        self.LUMP_SUM = lambda d, mw, mi: d * ((1 - 1(1 + mi)**-mw) / mi)
+        self.LUMP_SUM = lambda d, mw, mi: d * ((1 - 1 * (1 + mi)**-mw) / mi)
         self.ACCOUNT_BALANCE = lambda d, mw, mi: d * ((((1 + mi)**mw) - 1) / mi)
         self.MONTHLY_INTEREST_RATE = lambda annual_interest_rate: annual_interest_rate / 12
     

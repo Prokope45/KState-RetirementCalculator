@@ -1,10 +1,16 @@
 from RetirementCalculator import interface
 
-user_process = str(input("Welcome to the Retirement Calculator! Enter \"q\" to quit."))
-while user_process not in  ['n', 'q']:
-    print("Stage 1:")
-    user_pre_retirement_monthly_income = int(input("Enter your pre-retirement final monthly income: "))
+process = interface.RetirementInterface()
 
-    interface = interface.RetirementInterface(pre_retirement_income=user_pre_retirement_monthly_income)
-    print(interface)
-    user_process = str(input("Do you want to continue? y/n"))
+if __name__ == '__main__':
+    print("Monthly Interest Rate:")
+    process.monthly_interest_rate()
+
+    print("Stage 1:")
+    # process.stage_one()
+
+    print("Stage 2:")
+    # interface.stage_two
+
+    print("Stage 3:")
+    # interface.stage_three
