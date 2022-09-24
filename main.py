@@ -1,16 +1,23 @@
+# Relative Imports
 from RetirementCalculator import interface
-
-process = interface.RetirementInterface()
+from RetirementCalculator.testRetirementCalculator import test_retirement_calculator
 
 if __name__ == '__main__':
-    print("Monthly Interest Rate:")
-    process.monthly_interest_rate()
+    print("Welcome to Jared's Retirement Calculator! \nLet's get started:")
+    interface = interface.RetirementInterface()
+    test_retire_calc = test_retirement_calculator.TestRetirementCalculator()
 
-    print("Stage 1:")
-    # process.stage_one()
+    # Ensure tests pass first
+    test_retire_calc.test_monthly_interest_rate()
+    test_retire_calc.test_monthly_withdrawal_for_retirement()
+    test_retire_calc.test_lump_sum()
+    test_retire_calc.test_account_balance()
 
-    print("Stage 2:")
-    # interface.stage_two
+    # Stage One
+    print(interface.stage_one())
 
-    print("Stage 3:")
-    # interface.stage_three
+    # Stage Two
+    print(interface.stage_two())
+
+    # Stage Three
+    print(interface.stage_three())
