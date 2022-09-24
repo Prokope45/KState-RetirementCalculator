@@ -1,14 +1,23 @@
+"""
+File Name: test_retirement_calculator.py
+Author: Jared Paubel
+Section: 19C
+Description: Unit testing to ensure processing functionaly works properly
+"""
+
 # Module Imports
-from unittest import TestCase, expectedFailure
+import unittest
 
 # Relative Imports
-from RetirementCalculator.retirement_calculator import processor
+import RetirementCalculator.retirement_calculator.processor as processor
 
 
-class TestRetirementCalculator(TestCase):
+class TestRetirementCalculator(unittest.TestCase):
+    """ Test the functionality of RetirementCalculator """
+
     def test_lump_sum(self):
         retire_calc = processor.RetirementCalculator(
-            dollars_amount=8000.00,
+            dollars_amount=8000.0,
             retirement_years=25.00,
             annual_interest_rate=0.05
         )
@@ -19,7 +28,7 @@ class TestRetirementCalculator(TestCase):
             self.assertEqual(output, expected)
         except AssertionError as exc:
             raise AssertionError("Output is not the same as expected: \n{0}".format(exc))
-    
+
     def test_account_balance(self):
         retire_calc = processor.RetirementCalculator(dollars_amount=900, annual_interest_rate=0.09, retirement_years=35)
         output = float("{:.2f}".format(retire_calc.account_balance()))
@@ -45,4 +54,3 @@ class TestRetirementCalculator(TestCase):
             self.assertEqual(output, expected)
         except AssertionError as exc:
             raise AssertionError("Output is not the same as expected: \n{0}".format(exc))
-

@@ -1,6 +1,32 @@
+"""
+File Name: processor.py
+Author: Jared Paubel
+Section: 19C
+Description: Processing file for calculating retirement potentials
+"""
 
+# Module Imports
+# none
+
+# Relative Imports
 
 class RetirementCalculator:
+    """Process requests for calculating the retirement potential for a user
+
+    Keyword Args:
+        * monthly_withdraws: float=0.0
+        * dollars_amount: float=0.0
+        * monthly_interest: float=0.0
+        * annual_interest_rate: float=0.0
+        * retirement_years: float=0.0
+
+    Methods:
+        * lump_sum
+        * account_balance
+        * monthly_withdrawal_for_retirement
+        * monthly_interest_rate
+
+    """
     def __init__(
         self,
         monthly_withdraws: float=0.0,
@@ -36,24 +62,24 @@ class RetirementCalculator:
             )
         except Exception as exc:
             print("{0} has occurred.".format(exc))
-    
+
     def account_balance(self):
         """ Return to user their account balance """
         try:
             return self.ACCOUNT_BALANCE(self.dollars_amount, self.retirement_years, self.annual_interest_rate)
         except Exception as exc:
             print("{0} has occurred.".format(exc))
-    
+
     def monthly_withdrawal_for_retirement(self):
         """ Return the require monthly withdrawal to achieve desired income level """
         try:
             return self.MONTHLY_WITHDRAWAL_FOR_RETIREMENT(self.dollars_amount)
         except Exception as exc:
             print("{0} has occurred.".format(exc))
-    
+
     def monthly_interest_rate(self):
         """ Return to user the monthly interest rate """
         try:
             return self.MONTHLY_INTEREST_RATE(self.annual_interest_rate)
         except Exception as exc:
-            print("{0} has occurred.".format(exc))   
+            print("{0} has occurred.".format(exc))

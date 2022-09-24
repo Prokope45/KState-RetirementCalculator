@@ -1,3 +1,13 @@
+"""
+File Name: main.py
+Author: Jared Paubel
+Section: 19C
+Description: Run unit tests before running main program
+"""
+
+# Module Imports
+# none
+
 # Relative Imports
 from RetirementCalculator import interface
 from RetirementCalculator.testRetirementCalculator import test_retirement_calculator
