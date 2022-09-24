@@ -1,7 +1,6 @@
 """
 File Name: interface.py
 Author: Jared Paubel
-Section: 19C
 Description: Serves as the medium between the user and the backend processing
 """
 
@@ -64,6 +63,9 @@ class RetirementInterface:
         return processor.RetirementCalculator(annual_interest_rate=0.10).monthly_interest_rate()
 
     def stage_one(self):
+        """Get user input for pre-retirement monthly income, annual rate of return, and years to retire\n
+        Return response with properly calculated values
+        """
         try:
             self.user_input = input("\nStage 1:\n\nEnter your pre-retirement final monthly income: ")
             self.user_pre_retirement_monthly_income = float(self.user_input if self.user_input[0] != "$" else self.user_input[1:])
@@ -94,6 +96,9 @@ class RetirementInterface:
         )
 
     def stage_two(self):
+        """Get user input for average monthly investment, expected rate of return, and years until retirement\n
+        Return response with properly calculated values
+        """
         try:
             self.user_years_until_retirement = float(input("\nStage 2\n\nHow many years until you retire?: "))
 
@@ -123,6 +128,9 @@ class RetirementInterface:
             return "\nUnfortunately, you will need to save more to reach your retirement goal.\n"
 
     def stage_three(self):
+        """Get user input for whether they request to see the retirment account summary\n
+        Return response with properly calculated values and close
+        """
         try:
             self.user_request_details = str(input("\nStage 3\n\nDo you want to see your retirement summary? (y/n): "))
         except ValueError:

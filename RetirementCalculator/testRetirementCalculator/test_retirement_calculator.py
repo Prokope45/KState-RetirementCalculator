@@ -1,7 +1,6 @@
 """
 File Name: test_retirement_calculator.py
 Author: Jared Paubel
-Section: 19C
 Description: Unit testing to ensure processing functionaly works properly
 """
 

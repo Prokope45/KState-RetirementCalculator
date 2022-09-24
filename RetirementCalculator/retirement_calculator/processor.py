@@ -1,7 +1,6 @@
 """
 File Name: processor.py
 Author: Jared Paubel
-Section: 19C
 Description: Processing file for calculating retirement potentials
 """
 

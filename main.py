@@ -1,7 +1,6 @@
 """
 File Name: main.py
 Author: Jared Paubel
-Section: 19C
 Description: Run unit tests before running main program
 """
 
@@ -23,11 +22,11 @@ if __name__ == '__main__':
     test_retire_calc.test_lump_sum()
     test_retire_calc.test_account_balance()
 
-    # Stage One
+    # run Stage One
     print(interface.stage_one())
 
-    # Stage Two
+    # run Stage Two
     print(interface.stage_two())
 
-    # Stage Three
+    # run Stage Three
     print(interface.stage_three())
