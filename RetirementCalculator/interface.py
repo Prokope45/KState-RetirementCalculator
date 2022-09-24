@@ -69,7 +69,7 @@ class RetirementInterface:
             self.user_pre_retirement_monthly_income = float(self.user_input if self.user_input[0] != "$" else self.user_input[1:])
 
             self.user_input = input("Enter your expected rate of return (usually .03-.07): ")
-            self.user_annual_rate_of_return = float(self.user_input if self.user_input[-1] != "%" else self.user_input[:-1]) / 100
+            self.user_annual_rate_of_return = float(self.user_input) if self.user_input[-1] != "%" else float(self.user_input[:-1]) / 100
 
             self.user_years_to_retire = float(input("Enter the number of years you hope to be retired (usually 15 - 30): "))
         except ValueError:
@@ -101,7 +101,7 @@ class RetirementInterface:
             self.user_average_monthly_investment = float(self.user_input if self.user_input[0] != "$" else self.user_input[1:])
 
             self.user_input = input("Enter your expected annual retirement account return (usually .03 - .12): ")
-            self.user_expected_retirement_return = float(self.user_input if self.user_input[-1] != "%" else self.user_input[:-1]) / 100
+            self.user_expected_retirement_return = float(self.user_input) if self.user_input[-1] != "%" else float(self.user_input[:-1]) / 100
         except ValueError:
             return "Please enter numerical values for all inputs."
         except IndexError:
@@ -156,7 +156,7 @@ class RetirementInterface:
                     "-${:,.2f}".format(self.user_retirement_surplus_or_deficit * -1)
                 )
         elif self.user_request_details in ['n', 'N', 'no', 'No', "NO"]:
-            exit("Thank you for using Jared's Retirement Calculator, and see you again soon!")
+            exit("\nThank you for using Jared's Retirement Calculator, and see you again soon!")
         else:
             raise Exception("Please enter characters only, and try again.")
 
